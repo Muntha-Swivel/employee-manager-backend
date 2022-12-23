@@ -1,0 +1,31 @@
+{
+  "name": "emp-manager-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.3.8",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.7",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "mongoose": "^6.8.1",
+    "pino": "^8.8.0",
+    "pino-pretty": "^9.1.1",
+    "validator": "^13.7.0"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/config": "^3.3.0",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.17",
+    "@types/validator": "^13.7.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  }
+}
