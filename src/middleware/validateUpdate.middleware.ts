@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from "express";
-import { createEmployeeSchema } from "../schema/employee.schema";
-const validateAddEmployeeMiddleware = (
+import { updateEmployeeSchema } from "../schema/employee.schema";
+const validateUpdateEmployeeMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const { error, value } = createEmployeeSchema.validate(req.body);
+  const { error, value } = updateEmployeeSchema.validate(req.body);
   console.log(req.body);
   if (error) {
     return res
@@ -17,4 +17,4 @@ const validateAddEmployeeMiddleware = (
   return;
 };
 
-export default validateAddEmployeeMiddleware;
+export default validateUpdateEmployeeMiddleware;

@@ -17,7 +17,7 @@ const createEmployeeSchema = Joi.object({
 
 const reqParamasSchemaId = Joi.string().required();
 
-const editEmployeeSchema = Joi.object({
+const updateEmployeeSchema = Joi.object({
   _id: Joi.string(),
   firstName: Joi.string().min(6).max(10).required(),
   lastName: Joi.string().min(6).max(10).required(),
@@ -29,4 +29,4 @@ const editEmployeeSchema = Joi.object({
 
 //const services = Joi.array().items(postSchema);
 
-export { createEmployeeSchema, editEmployeeSchema, reqParamasSchemaId };
+export { createEmployeeSchema, updateEmployeeSchema, reqParamasSchemaId };

@@ -3,9 +3,12 @@ import {
   getAllEmployeesHandler,
   createEmployeeHandler,
   getEmployeeByIdHandler,
+  updateEmployeeHandler,
+  removeEmployeeHandler,
 } from "./controller/employee.controller";
 import validateParamsMiddleware from "./middleware/validateParams.middleware";
-import validateAddEmployeeMiddleware from "./middleware/validateAddEmployee.middleware";
+import validateAddEmployeeMiddleware from "./middleware/validateAdd.middleware";
+import validateUpdateEmployeeMiddleware from "./middleware/validateUpdate.middleware";
 
 const router = express.Router();
 
@@ -16,5 +19,13 @@ router.get(
   validateParamsMiddleware,
   getEmployeeByIdHandler
 );
+router.get(
+  "/removeEmployee/:id",
+  validateParamsMiddleware,
+  removeEmployeeHandler
+);
+
 router.post("/", validateAddEmployeeMiddleware, createEmployeeHandler);
+router.post("/update", validateUpdateEmployeeMiddleware, updateEmployeeHandler);
+
 export default router;

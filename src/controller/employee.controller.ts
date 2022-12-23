@@ -6,6 +6,8 @@ import {
   getAllEmployeesService,
   getEmployeeByIdService,
   createEmployeeService,
+  updateEmployeeService,
+  removeEmployeeService,
 } from "../service/employee.service";
 
 const getAllEmployeesHandler = async (req: Request, res: Response) => {
@@ -27,8 +29,28 @@ const getEmployeeByIdHandler = async (req: Request, res: Response) => {
 const createEmployeeHandler = async (req: Request, res: Response) => {
   try {
     const newEmployee = await createEmployeeService(req.body);
-    res.status(200).json({ newEmployee: newEmployee });
+    return res.status(200).json({ message: "success" });
   } catch (err: any) {
+    return res.status(400).json({ status: "error", message: err });
+  }
+};
+
+const updateEmployeeHandler = async (req: Request, res: Response) => {
+  try {
+    const result = await updateEmployeeService(req.body);
+    return res.status(200).json({ message: "success" });
+  } catch (err) {
+    return res.status(400).json({ status: "error", message: err });
+  }
+};
+
+const removeEmployeeHandler = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  try {
+    const updatedData = await removeEmployeeService(id);
+    res.status(200).json({ employees: updatedData });
+    console.log(updatedData);
+  } catch (err) {
     return res.status(400).json({ status: "error", message: err });
   }
 };
@@ -37,4 +59,6 @@ export {
   getAllEmployeesHandler,
   createEmployeeHandler,
   getEmployeeByIdHandler,
+  updateEmployeeHandler,
+  removeEmployeeHandler,
 };

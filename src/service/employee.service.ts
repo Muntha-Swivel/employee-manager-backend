@@ -33,8 +33,41 @@ const createEmployeeService = async (employee: iEmployee) => {
   }
 };
 
+const updateEmployeeService = async (employee: iEmployee) => {
+  const { _id, firstName, lastName, email, phone, gender, photo } = employee;
+
+  try {
+    const update = await EmployeeModel.findByIdAndUpdate(_id, {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      gender: gender,
+      photo: photo,
+    });
+
+    return update;
+  } catch (err: any) {
+    log.info(err);
+    throw err.message;
+  }
+};
+
+const removeEmployeeService = async (id: string) => {
+  try {
+    const deleteEmployee = await EmployeeModel.findByIdAndDelete(id);
+    const updatedData = await EmployeeModel.find();
+    return updatedData;
+  } catch (err: any) {
+    log.info(err);
+    throw err.message;
+  }
+};
+
 export {
   createEmployeeService,
   getAllEmployeesService,
   getEmployeeByIdService,
+  updateEmployeeService,
+  removeEmployeeService,
 };
