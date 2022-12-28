@@ -7,16 +7,18 @@ const getAllEmployeesService = async () => {
   try {
     const employees = await EmployeeModel.find();
     return employees;
-  } catch (err) {
+  } catch (err: any) {
     log.info(err);
+    throw err.message;
   }
 };
 const getEmployeeByIdService = async (id: string) => {
   try {
     const employee = EmployeeModel.findById(id);
     return employee;
-  } catch (err) {
+  } catch (err: any) {
     log.info(err);
+    throw err.message;
   }
 };
 const createEmployeeService = async (employee: iEmployee) => {

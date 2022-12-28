@@ -5,6 +5,7 @@ import {
   getEmployeeByIdHandler,
   updateEmployeeHandler,
   removeEmployeeHandler,
+  empTesting,
 } from "./controller/employee.controller";
 import validateParamsMiddleware from "./middleware/validateParams.middleware";
 import validateAddEmployeeMiddleware from "./middleware/validateAdd.middleware";
@@ -24,6 +25,7 @@ router.get(
   validateParamsMiddleware,
   removeEmployeeHandler
 );
+router.get("/testing", empTesting);
 
 router.post("/", validateAddEmployeeMiddleware, createEmployeeHandler);
 router.post("/update", validateUpdateEmployeeMiddleware, updateEmployeeHandler);
