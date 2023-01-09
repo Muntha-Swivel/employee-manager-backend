@@ -19,7 +19,8 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "start": "npm run build && node build/src/app.js"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
