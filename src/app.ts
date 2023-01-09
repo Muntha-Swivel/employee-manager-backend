@@ -7,7 +7,7 @@ import createServer from "./utils/server";
 // const swaggerDocs = require("../swagger.json");
 
 const app = createServer();
-const port = config.get<number>("port");
+const port = process.env.PORT || config.get<number>("port");
 
 //app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 

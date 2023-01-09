@@ -19,7 +19,7 @@ const server_1 = __importDefault(require("./utils/server"));
 // import swaggerUi from "swagger-ui-express";
 // const swaggerDocs = require("../swagger.json");
 const app = (0, server_1.default)();
-const port = config_1.default.get("port");
+const port = process.env.PORT || config_1.default.get("port");
 //app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.get("/", (req, res) => {
     res.send("hello world");
