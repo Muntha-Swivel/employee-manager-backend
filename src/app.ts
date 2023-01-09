@@ -11,6 +11,9 @@ const port = config.get<number>("port");
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 app.listen(port, async () => {
   log.info(`Server started on port ${port}`);
   await connect();
