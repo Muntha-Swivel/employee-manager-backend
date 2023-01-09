@@ -3,7 +3,7 @@ src/
 jest.config
 package-lock
 Procfile
-config
+config/
 swagger.json
 tsconfig
 yar-error.log
