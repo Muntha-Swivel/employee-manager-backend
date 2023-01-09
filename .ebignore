@@ -1,0 +1,10 @@
+node_modules/
+src/
+jest.config
+package-lock
+Procfile
+config
+swagger.json
+tsconfig
+yar-error.log
+yarn.lock
