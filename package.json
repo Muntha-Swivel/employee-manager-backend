@@ -1,7 +1,7 @@
 {
   "name": "emp-manager-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.ts",
   "license": "MIT",
   "dependencies": {
     "config": "^3.3.8",
