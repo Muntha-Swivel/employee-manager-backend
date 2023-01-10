@@ -4,7 +4,7 @@ import log from "./utils/logger";
 import createServer from "./utils/server";
 import swaggerUi from "swagger-ui-express";
 
-const swaggerDocs = require("../swagger.json");
+const swaggerDocs = require("./swagger.json");
 
 const app = createServer();
 const port = process.env.PORT || config.get<number>("port");
