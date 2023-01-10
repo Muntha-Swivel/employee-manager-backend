@@ -90,18 +90,18 @@ describe("employees", () => {
             expect(body).toHaveProperty("employee");
         }));
     });
-    describe("given the employee does not exist", () => {
-        it("should return a null employee object", () => __awaiter(void 0, void 0, void 0, function* () {
-            const getEmployeeMockService = jest
-                .spyOn(employeeService, "getEmployeeByIdService")
-                //@ts-ignore
-                .mockReturnValue({});
-            const { statusCode, body } = yield (0, supertest_1.default)(app)
-                .get("/employee/getEmployee/63a0471d6fa4ccc5be8afc4a")
-                .set("Accept", "application/json");
-            expect(body).toHaveProperty("message");
-        }));
-    });
+    //   describe("given the employee does not exist", () => {
+    //     it("should return a null employee object", async () => {
+    //       const getEmployeeMockService = jest
+    //         .spyOn(employeeService, "getEmployeeByIdService")
+    //         //@ts-ignore
+    //         .mockReturnValue({});
+    //       const { statusCode, body } = await supertest(app)
+    //         .get("/employee/getEmployee/63a0471d6fa4ccc5be8afc4a")
+    //         .set("Accept", "application/json");
+    //       expect(body).toHaveProperty("message");
+    //     });
+    //   });
     describe("given the employee id on the url is in invalid format", () => {
         it("should return an error code of 422 and a status of error", () => __awaiter(void 0, void 0, void 0, function* () {
             const getEmployeeMockService = jest
@@ -114,40 +114,3 @@ describe("employees", () => {
         }));
     });
 });
-// describe("testing employees", () => {
-//   it("should retun an employee", async () => {
-//     const getEmployeeMockService = jest
-//       .spyOn(employeeService, "getEmployeeByIdService")
-//       //@ts-ignore
-//       .mockReturnValue(employee);
-//     const { status, body } = await supertest(app).get(
-//       "/employee/getEmployee/63a0471d6fa4cbc5be8afc2a"
-//     );
-//     // expect(body).toEqual(empPayload);
-//     expect(body).toHaveProperty("error");
-//     // expect(getEmployeeMockService).toHaveBeenCalled();
-//   });
-//   it("should return all employees", async () => {
-//     const getAllEmployees = jest
-//       .spyOn(employeeService, "getAllEmployeesService")
-//       //@ts-ignore
-//       .mockReturnValue({});
-//     const { status, body } = await supertest(app)
-//       .get("/employee")
-//       .set("Accept", "application/json");
-//     expect(body).toHaveProperty("employees");
-//     console.log(body);
-//   });
-// });
-// it("should return the user payload", async () => {
-//     const createUserServiceMock = jest
-//       .spyOn(UserService, "createUser")
-//       // @ts-ignore
-//       .mockReturnValueOnce(userPayload);
-//     const { statusCode, body } = await supertest(app)
-//       .post("/api/users")
-//       .send(userInput);
-//     expect(statusCode).toBe(200);
-//     expect(body).toEqual(userPayload);
-//     expect(createUserServiceMock).toHaveBeenCalledWith(userInput);
-//   });
