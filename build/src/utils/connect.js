@@ -19,7 +19,6 @@ function connect() {
     return __awaiter(this, void 0, void 0, function* () {
         mongoose_1.default.set("strictQuery", true);
         const dbUri = process.env.dbURI || config_1.default.get("dbUri");
-        //The variable about have not been used to connect, because its thrwing an error in elastic beanstalk
         try {
             yield mongoose_1.default.connect(dbUri);
             logger_1.default.info("Connected to DB");
@@ -31,4 +30,3 @@ function connect() {
     });
 }
 exports.default = connect;
-//"mongodb+srv://muntha:xdaZoUHqUoi2NQi7@cluster0.rgttnh6.mongodb.net/?retryWrites=true&w=majority"

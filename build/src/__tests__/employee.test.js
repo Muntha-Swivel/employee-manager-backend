@@ -90,18 +90,18 @@ describe("employees", () => {
             expect(body).toHaveProperty("employee");
         }));
     });
-    //   describe("given the employee does not exist", () => {
-    //     it("should return a null employee object", async () => {
-    //       const getEmployeeMockService = jest
-    //         .spyOn(employeeService, "getEmployeeByIdService")
-    //         //@ts-ignore
-    //         .mockReturnValue({});
-    //       const { statusCode, body } = await supertest(app)
-    //         .get("/employee/getEmployee/63a0471d6fa4ccc5be8afc4a")
-    //         .set("Accept", "application/json");
-    //       expect(body).toHaveProperty("message");
-    //     });
-    //   });
+    describe("given the employee does not exist", () => {
+        it("should return a null employee object", () => __awaiter(void 0, void 0, void 0, function* () {
+            const getEmployeeMockService = jest
+                .spyOn(employeeService, "getEmployeeByIdService")
+                //@ts-ignore
+                .mockReturnValue({});
+            const { statusCode, body } = yield (0, supertest_1.default)(app)
+                .get("/employee/getEmployee/63a0471d6fa4ccc5be8afc4a")
+                .set("Accept", "application/json");
+            expect(body).toHaveProperty("message");
+        }));
+    });
     describe("given the employee id on the url is in invalid format", () => {
         it("should return an error code of 422 and a status of error", () => __awaiter(void 0, void 0, void 0, function* () {
             const getEmployeeMockService = jest
