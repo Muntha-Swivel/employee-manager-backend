@@ -17,7 +17,7 @@ const connect_1 = __importDefault(require("./utils/connect"));
 const logger_1 = __importDefault(require("./utils/logger"));
 const server_1 = __importDefault(require("./utils/server"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-const swaggerDocs = require("./swagger.json");
+const swaggerDocs = require("../swagger.json");
 const app = (0, server_1.default)();
 const port = process.env.PORT || config_1.default.get("port");
 app.use("/api-docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocs));
