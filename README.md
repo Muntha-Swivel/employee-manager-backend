@@ -2,7 +2,7 @@
 
 ## Description
 
-This is the backend for **Employee Manager** application built using **Express** framework with **Typescript** and connected to a **MongoDB** database using **Mongoose**.
+This is the backend for **Employee Manager** application built using [Express](https://expressjs.com/) framework with [Typescript](https://www.typescriptlang.org/) and connected to a [MongoDB](https://www.mongodb.com/) database using [Mongoose](https://mongoosejs.com/docs/typescript.html)
 
 ## Installation
 
