@@ -7,8 +7,12 @@
   },
   "servers": [
     {
-      "url": "http://localhost:5000/employee",
-      "description": "Dev server"
+      "url": "http://localhost:8080/employee",
+      "description": "Dev Server"
+    },
+    {
+      "url": "http://employeemanager-env.eba-mhwcuic3.ap-northeast-1.elasticbeanstalk.com/employee",
+      "description": "Production Server"
     }
   ],
 
