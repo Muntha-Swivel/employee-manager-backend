@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-    "build": "tsc",
+    "build": "cp swagger.json build && tsc",
     "test": "jest",
     "start": "node build/src/app.js"
   },
