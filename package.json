@@ -1,9 +1,6 @@
 {
   "name": "emp-manager-backend",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.x"
-  },
   "main": "build/src/app.js",
   "license": "MIT",
   "dependencies": {
