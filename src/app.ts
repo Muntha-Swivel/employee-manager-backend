@@ -11,7 +11,7 @@ const port = process.env.PORT || config.get<number>("port");
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send("hello world");
 });
 app.listen(port, async () => {
